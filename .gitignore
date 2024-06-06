@@ -1,0 +1,3 @@
+# Do not push these files to github
+config.py
+__pycache__
