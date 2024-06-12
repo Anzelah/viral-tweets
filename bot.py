@@ -19,7 +19,7 @@ print(api.verify_credentials().screen_name)
 try:
 	media = api.media_upload(filename='images/mot.jpg')
 	print(media)
-	media_id = media.media_id
+	media_id = media.media_id_string
 	client.create_tweet(text='Morning motivation', media_ids=[media_id])
 except tweepy.TweepyException as e:
 	print('An error occured: {}' .format(e))
