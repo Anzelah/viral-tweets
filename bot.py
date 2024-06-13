@@ -1,6 +1,6 @@
 import tweepy
 import config
-import re
+import random
 
 #v2 authentication for creating tweets
 # client = tweepy.Client(
@@ -28,10 +28,17 @@ import re
 
 # File manipulation
 with open('lyrics.txt', 'r', encoding="utf-8") as f:
-	for i in f.readlines():
-		i.strip('\n')
-		pattern = r'"(.*?)"'
-		print(re.findall(pattern, i))
+    content = f.read().split('"')
 
+    #remove extra whitespaces between lyrics
+    content_list = [i.strip() for i in content]
+
+    #remove empty strings
+    while('' in content_list):
+	    content_list.remove('')
+
+    #choose Random lyrics
+    a = random.choice(content_list)
+    print(a)
 
 	
