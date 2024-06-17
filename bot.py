@@ -45,4 +45,14 @@ except tweepy.TweepyException as e:
 	print('An error occured: {}' .format(e))
 
 
+#Scheduer for when I deploy the application.
+# schedule.every().day.at("10:00").do(job) 2a.m.
+# schedule.every().day.at("20:00").do.(job) noon
+# schedule.every().day.at("4:00").do(job) 8p.m
+
+# while True:
+    # schedule.run_pending()
+    # time.sleep(1)
+
+
 	
