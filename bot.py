@@ -11,14 +11,14 @@ def find_lyrics(file_path):
 		content = f.read().split('"')
 
         #remove extra whitespaces between lyrics
-        lyrics_list = [i.strip() for i in content]
+		lyrics_list = [i.strip() for i in content]
 
         #remove empty strings
-	    while('' in lyrics_list):
-	        lyrics_list.remove('')
+		while('' in lyrics_list):
+			lyrics_list.remove('')
 
         #choose random lyrics   
-        lyrics = random.choice(lyrics_list)
+		lyrics = random.choice(lyrics_list)
 	return lyrics
 
 #BOT
@@ -32,12 +32,12 @@ client = tweepy.Client(
 )
 
 
-tweeted_lyrics = []
 #post the tweets using v2 client
+tweeted_lyrics = ["These are already tweeted lyrics:"]
 try:
 	text = find_lyrics('lyrics.txt')
 	print(text)
-	client.create_tweet(text=text)
+	client.create_tweet(text=text + ' #whatsthesong')
 	print('Tweet created succesfully!')
 
 	tweeted_lyrics.append(text)
